@@ -1,21 +1,16 @@
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> All the spice under one roof </title>
-        {% endif %}
-    </head>
-    <body>
+{% extends 'base.html'%}
+
+<!-- content block -->
+
+{%block content%}
       <!-- <h4>{{message}}</h4> -->
       <h4>{{tags}}</h4>
       <!-- BBC NEWS  -->
       <h1>BBC NEWS</h1>
-      {%for article in bbc-news %}
-        <p>{{article.title}}</p>
+      {%for source in sources %}
+        <a href="{{source.url}}"><p>{{source.name}}</p>
+        </a>
       {% endfor %}
-    </body>
-</html>
+
+{%endblock%}

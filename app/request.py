@@ -11,7 +11,7 @@ api_key = app.config['NEWS_API_KEY']
 base_url = app.config["NEWS_API_BASE_URL"]
 
 
-def get_sources(sources):
+def get_sources():
     '''
     Function that gets the json response to our url request
     '''
@@ -23,8 +23,8 @@ def get_sources(sources):
 
         sources_results = None
 
-        if get_sources_response['articles']:
-            sources_results_list = get_sources_response['articles']
+        if get_sources_response['sources']:
+            sources_results_list = get_sources_response['sources']
             sources_results = process_results(sources_results_list)
 
 
@@ -45,14 +45,14 @@ def process_results(sources_list):
 
     sources_results = []
     for source in sources_list:
-        author = source.get('author')
-        title = source.get('title')
-        urlToImage = source.get('urlToImage')
+        name = source.get('name')
         description = source.get('description')
-        content = source.get('content')
+        url = source.get('url')
+        language = source.get('language')
+        country = source.get('country')
 
-        if urlToImage:
-            source_object = Source(author, title, urlToImage, description, content)
+        if url:
+            source_object = Source(name, description, url, language, country)
             sources_results.append(source_object)
 
     return sources_results

@@ -11,7 +11,7 @@ class SourceTest(unittest.TestCase):
         '''
         Set up method that will run before every Test
         '''
-        self.new_source = Source('python world', 'flight set to crash again','It is ethiopian airlines', 'https://ichef.bbci.co.uk/news/1024/branded_news/B576/production/_106445464_ivanka2.png', 'Lorem ipsum dolor sit amet...')
+        self.new_source = Source('aljazeera','home of all news', 'http://www.aljazeera.com', 'en', 'us')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_source,Source))
