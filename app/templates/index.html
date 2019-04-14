@@ -10,8 +10,12 @@
         {% endif %}
     </head>
     <body>
-      <h4>{{message}}</h4>
+      <!-- <h4>{{message}}</h4> -->
       <h4>{{tags}}</h4>
-
+      <!-- BBC NEWS  -->
+      <h1>BBC NEWS</h1>
+      {%for article in bbc-news %}
+        <p>{{article.title}}</p>
+      {% endfor %}
     </body>
 </html>
