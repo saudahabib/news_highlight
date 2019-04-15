@@ -46,6 +46,18 @@ background-color: rgba(0,0,0,0.4);
 display: inline-block;
 
 }
-marquee{
+marquee, .text-muted{
 color: #ff0066;
+}
+#hot{
+  padding-bottom: 10%;
+  margin-top: 3%;
+}
+.logo{
+  width: 70px;
+  height: 70px;
+  margin-left: 350px;
+}
+h3{
+  font-family: 'Righteous', cursive;
 }
