@@ -15,17 +15,12 @@
       <h1>BBC NEWS</h1>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-4">
-            <div class="row">
               <div class="col-sm-4">
                 {% for source in sources %}
                   <a href="{{source.url}}"     target="_blank" id="link"><button type="button" name="button" class="btn btn-dark" id="source">{{source.name}}</button>
                   </a>
                 {% endfor %}
               </div>
-            </div>
-
-          </div>
           <div class="col-sm-8">
             <div class="row">
               <div class="col-sm-12">
