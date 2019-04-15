@@ -1,13 +1,14 @@
 #trial {
-  border: 2px solid #FF0066;
+background-color: black;
 }
 #card {
-  border: 1px solid #FF0066;
+  border: 2px dashed #d2691e;
   padding: 10px;
   margin-bottom: 10px;
 }
 #source {
-  padding: 20px;
+  margin: 10px;
+  padding: 10px;
   /* padding-top: 10px;
   padding-bottom: 10px; */
 
@@ -17,4 +18,34 @@ color: 	#d2691e;
 text-decoration: none;
 /* padding-bottom: 10px;
 padding-top: 10px; */
+}
+#fonts{
+  font-family: 'UnifrakturMaguntia', sans-serif;
+  text-align: center;
+  font-size: 8rem;
+  border: 2px dashed #d2691e
+}
+.home {
+background-image: url('https://images.pexels.com/photos/1153212/pexels-photo-1153212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+text-align: center;
+font-size: 9rem;
+font-family: 'Cinzel Decorative', cursive;
+
+}
+#heading {
+font-family: 'Righteous' ,cursive;
+font-style: 4rem;
+color: white;
+background-color: rgba(0,0,0,0.4);
+
+}
+#text {
+display: inline-block;
+
+}
+marquee{
+color: #ff0066;
 }
