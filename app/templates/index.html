@@ -5,7 +5,7 @@
 {{super()}}
 <link rel="stylesheet"
       href="{{url_for('.static', filename='styles.css')}}">
-      <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Righteous|UnifrakturMaguntia" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Kaushan+Script|Righteous|UnifrakturMaguntia" rel="stylesheet"
 {% endblock %}
 <!-- content block -->
 
@@ -28,7 +28,7 @@
               <div class="col-sm-4">
                 <h1 id="fonts">News Sources</h1>
                 {% for source in sources %}
-                  <a href="{{source.url}}"     target="_blank" id="link"><button type="button" name="button" class="btn btn-dark" id="source">{{source.name}}</button>
+                  <a href="{{source.url}}"     target="_blank" id="link"><button type="button" name="button" class="btn btn-dark" data-animation="ripple" id="source">{{source.name}}</button>
                   </a>
                 {% endfor %}
               </div>
@@ -36,7 +36,7 @@
             <div class="row" id="hot">
               <div class="col-sm-12" id="trial">
                 <img src="https://www.faithinhisblood.org/uploads/2/8/5/1/28510639/hot-news_orig.gif" alt="fire">
-                <hr><hr>
+                <hr><p id="location">...in Africa!</p><hr>
               </div>
             </div>
             <div class="row">
