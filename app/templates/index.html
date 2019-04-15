@@ -1,34 +1,54 @@
 
 {% extends 'base.html'%}
-
+<!-- styles block -->
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='styles.css')}}">
+{% endblock %}
 <!-- content block -->
 
 {%block content%}
       <!-- <h4>{{message}}</h4> -->
-      <h4>{{tags}}</h4>
+      <h4 id="trial">{{tags}}</h4>
       <!-- BBC NEWS  -->
       <h1>BBC NEWS</h1>
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-4">
-            {% for source in sources %}
-              <a href="{{source.url}}"     target="_blank"><button type="button" name="button" class="btn btn-dark">{{source.name}}</button>
-              </a>
-            {% endfor %}
+            <div class="row">
+              <div class="col-sm-4">
+                {% for source in sources %}
+                  <a href="{{source.url}}"     target="_blank" id="link"><button type="button" name="button" class="btn btn-dark" id="source">{{source.name}}</button>
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+
           </div>
           <div class="col-sm-8">
             <div class="row">
-              {% for article in articles%}
-              <div class="card" style="width:350px">
-                <img src="{{article.urlToImage}}" class="card-img-top" alt="{{article.author}}" width="350px">
-                <div class="card-body">
-                  <h6 class="card-title">{{article.title}}</h6>
-                  <p class="card-text">{{article.description}}</p>
-                  <a href="{{article.url}}"><button type="button" name="button" class="btn btn-dark">Read More...</button></a>
-                  <p class="card-text"><small class="text-muted">Posted on {{article.publishedAt}}</small></p>
+              <div class="col-sm-12">
+                <img src="https://www.faithinhisblood.org/uploads/2/8/5/1/28510639/hot-news_orig.gif" alt="fire">
+                <hr><hr>
               </div>
-              {% endfor %}
             </div>
+            <div class="row">
+              {% for article in articles%}
+              <div class="col-sm-6">
+                <div class="card" style="width:400px" id="card">
+                  <img src="{{article.urlToImage}}" class="card-img-top" alt="{{article.author}}" width="380px">
+                  <div class="card-body">
+                    <h3 class="card-title">{{article.title}}</h3>
+                    <p class="card-text">{{article.description}}</p>
+                    <a href="{{article.url}}"><button type="button" name="button" class="btn btn-dark">Read More...</button></a>
+                    <p class="card-text"><small class="text-muted">Posted on {{article.publishedAt}}</small></p>
+                </div>
+
+              </div>
+              </div>
+
+              {% endfor %}
             </div>
 
         </div>

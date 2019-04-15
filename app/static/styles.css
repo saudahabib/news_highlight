@@ -1,0 +1,20 @@
+#trial {
+  border: 2px solid #FF0066;
+}
+#card {
+  border: 1px solid #FF0066;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#source {
+  padding: 20px;
+  /* padding-top: 10px;
+  padding-bottom: 10px; */
+
+}
+#link {
+color: 	#d2691e;
+text-decoration: none;
+/* padding-bottom: 10px;
+padding-top: 10px; */
+}
