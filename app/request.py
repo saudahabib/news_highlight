@@ -1,9 +1,9 @@
 from app import app
 import urllib.request,json
-from .models import source
+from .models import source, article
 
 Source = source.Source
-
+Article = article.Article
 # Getting the API key
 api_key = app.config['NEWS_API_KEY']
 
@@ -76,3 +76,50 @@ def process_results(sources_list):
             sources_results.append(source_object)
 
     return sources_results
+
+def get_articles(query):
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_articles_url = article_base_url.format(query,api_key)
+    # print(get_sources_url)
+    with urllib.request.urlopen(get_articles_url) as url:
+        get_articles_data = url.read()
+        get_articles_response = json.loads(get_articles_data)
+
+        articles_results = None
+
+        if get_articles_response['articles']:
+            articles_results_list = get_articles_response['articles']
+            articles_results = process_article_results(articles_results_list)
+
+
+    return articles_results
+
+
+
+
+def process_article_results(article_list):
+    '''
+    Function  that processes the articles result and transform them to a list of Objects
+
+    Args:
+        article_list: A list of dictionaries that contain articles' details
+
+    Returns :
+        articles_results: A list of movie objects
+    '''
+    articles_results = []
+    for article_item in article_list:
+        author = article_item.get('author')
+        title = article_item.get('title')
+        description = article_item.get('description')
+        url = article_item.get('url')
+        urlToImage = article_item.get('urlToImage')
+        publishedAt = article_item.get('publishedAt')
+
+        if urlToImage:
+            article_object = Article(author, title, description, url, urlToImage,publishedAt)
+            articles_results.append(article_object)
+
+    return articles_results

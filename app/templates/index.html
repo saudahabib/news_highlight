@@ -8,9 +8,31 @@
       <h4>{{tags}}</h4>
       <!-- BBC NEWS  -->
       <h1>BBC NEWS</h1>
-      {%for source in sources %}
-        <a href="{{source.url}}"><p>{{source.name}}</p>
-        </a>
-      {% endfor %}
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4">
+            {% for source in sources %}
+              <a href="{{source.url}}"     target="_blank"><button type="button" name="button" class="btn btn-dark">{{source.name}}</button>
+              </a>
+            {% endfor %}
+          </div>
+          <div class="col-sm-8">
+            <div class="row">
+              {% for article in articles%}
+              <div class="card" style="width:350px">
+                <img src="{{article.urlToImage}}" class="card-img-top" alt="{{article.author}}" width="350px">
+                <div class="card-body">
+                  <h6 class="card-title">{{article.title}}</h6>
+                  <p class="card-text">{{article.description}}</p>
+                  <a href="{{article.url}}"><button type="button" name="button" class="btn btn-dark">Read More...</button></a>
+                  <p class="card-text"><small class="text-muted">Posted on {{article.publishedAt}}</small></p>
+              </div>
+              {% endfor %}
+            </div>
+            </div>
+
+        </div>
+      </div>
+</div>
 
 {%endblock%}
