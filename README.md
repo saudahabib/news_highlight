@@ -13,8 +13,8 @@ This is a news application that allows a user to view news from different networ
 ## Cloning and running
 Clone the application using git clone(this copies the app onto your device). In terminal:
 
-  *  $ git clone https://github.com/IJaccojwang/ijnews/
-  *  $ cd ijnews
+  *  $ git clone https://github.com/saudahabib/news_highlight/
+  *  $ cd news_highlight
 
 ## Creating the virtual environment
 
